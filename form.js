@@ -86,9 +86,10 @@ function updateBillingFrequency() {
 
 // Step 2 Final Submit
 function handleStep2Submit(event) {
+  event.preventDefault();
+  
   if (!selectedPlanInput.value) {
     alert('Please select a plan.');
-    event.preventDefault();
     return;
   }
 
