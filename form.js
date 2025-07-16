@@ -1,6 +1,7 @@
 // ===== SELECTORS =====
 const form1 = document.getElementById('form1');
 const form2 = document.getElementById('form2');
+const form3 = document.getElementById('form3')
 
 const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
@@ -8,6 +9,7 @@ const phoneInput = document.getElementById('phone');
 
 const form_step1 = document.getElementById('form-step1');
 const form_step2 = document.getElementById('form-step2');
+const form_step3 = document.getElementById('form-step3');
 
 const planCards = document.querySelectorAll('.plan-card');
 const selectedPlanInput = document.getElementById('selectedPlan');
@@ -24,9 +26,21 @@ const backBtn = document.getElementById('backBtn');
 billingFrequencyInput.value = 'Monthly';
 monthlyText.classList.add('active');
 yearlyText.classList.remove('active');
-updateSidebar(1)
+
+let currentStep = 1;
+goToStep(currentStep);
 
 // ===== FUNCTIONS =====
+
+function goToStep(stepNumber) {
+    currentStep = stepNumber;
+
+    [form_step1, form_step2, form_step3].forEach((form, index) => {
+        form.style.display = (index + 1 === stepNumber) ? 'block' : 'none';
+    });
+
+    updateSidebar(stepNumber);
+}
 
 function updateSidebar(stepNumber) {
     const stepNumbers = document.querySelectorAll('.step-number');
@@ -49,9 +63,7 @@ function handleStep1Submit(event) {
     return;
   }
 
-  form_step1.style.display = 'none';
-  form_step2.style.display = 'block';
-  updateSidebar(2);
+  goToStep(2);
 
 }
 
@@ -82,14 +94,16 @@ function handleStep2Submit(event) {
 
   console.log('Selected Plan:', selectedPlanInput.value);
   console.log('Billing Frequency:', billingFrequencyInput.value);
+  
+  goToStep(3)
 }
 
-function handleStep2Back(event) {
-    form_step1.style.display = 'block';
-    form_step2.style.display = 'none';
-    updateSidebar(1);
+// Step 3 Final Submit
+function handleStep3Submit(event) {
+  event.preventDefault();
+  // Add any validation or summary logic here
+  goToStep(4);
 }
-
 // ===== EVENT LISTENERS =====
 form1.addEventListener('submit', handleStep1Submit);
 
@@ -101,4 +115,11 @@ billingToggle.addEventListener('change', updateBillingFrequency);
 
 form2.addEventListener('submit', handleStep2Submit);
 
-backBtn.addEventListener('click', handleStep2Back);
+// Back Button Logic
+backBtn.addEventListener('click', function() {
+    if (currentStep > 1) {
+        goToStep(currentStep - 1);
+    }
+});
+
+form3.addEventListener('submit', handleStep3Submit);
