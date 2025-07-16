@@ -238,3 +238,81 @@ input:checked + .slider:before {
     margin-top: 70px;
     font-size: 15px;
 }
+
+
+/* Form Step 3 */
+.add-on-box{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.inside-add-on {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-add-on {
+    display: flex;
+    align-items: center;
+}
+
+.add-on-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    gap: 6px;
+}
+
+.add-on-title{
+    font-size: 17px;
+    margin: 0;
+}
+
+.add-on-description{
+    font-size: 17px;
+    color: rgb(163, 150, 150);
+    margin: 0;
+}
+
+.add-on-price{
+    color: rgb(76, 86, 203);
+}
+
+/* Custom checkbox styles for add-ons */
+.add-on-box input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  background-color: #fff;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.add-on-box input[type="checkbox"]:checked {
+  background-color: #4f46e5;
+  border-color: #4f46e5;
+}
+
+/* Check mark styles */
+.add-on-box input[type="checkbox"]:checked::after {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 7px;
+  width: 3px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}

@@ -72,6 +72,7 @@
       </div>
     </section>
 
+
     <!-- Form Step 2-->
     <section id="form-step2" class="form-area" style="display: none;">
       <h1 class="form-title">Select your plan</h1>
@@ -117,23 +118,48 @@
       </form>
     </section>
 
+
     <!-- Form Step 3-->
-    <section id="form-step3" class="form-area" style="display: none;>
-      <h1 class="form-title">Pick add-ons</h1>
+    <section id="form-step3" class="form-area" style="display: none;">
+      <h1 class="form-title"> Pick add-ons</h1>
       <p class="form-subtitle"> Add-ons help enhance your gaming experience </p>
       <form id="form3">
-        <label>
-          <input type="checkbox" name="addons" value="Online Service"> Online Service
-        </label>
-
-        <label>
-          <input type="checkbox" name="addons" value="Online Service"> Online Service
-        </label>
-
-        <label>
-          <input type="checkbox" name="addons" value="Online Service"> Online Service
-        </label>
-
+        <div class="add-on-box">
+          <label class="inside-add-on">
+            <div class="left-add-on">
+              <input type="checkbox" name="addons" value="Online Service">
+              <div class="add-on-text">
+                <h1 class="add-on-title"> Online service </h1>
+                <p class="add-on-description">Access to multiplayer games</p>
+              </div>
+            </div>
+            <p class="add-on-price">+$1/mo</p>
+          </label>
+        </div>
+        <div class="add-on-box">
+          <label class="inside-add-on">
+            <div class="left-add-on">
+              <input type="checkbox" name="addons" value="Online Service">
+              <div class="add-on-text">
+                <h1 class="add-on-title"> Larger Storage </h1>
+                <p class="add-on-description">Extra 1TB of cloud save</p>
+              </div>
+            </div>
+            <p class="add-on-price">+$2/mo</p>
+          </label>
+        </div>
+        <div class="add-on-box">
+          <label class="inside-add-on">
+            <div class="left-add-on">
+              <input type="checkbox" name="addons" value="Online Service">
+              <div class="add-on-text">
+                <h1 class="add-on-title"> Customizable Profile </h1>
+                <p class="add-on-description">Custom theme on your profile</p>
+              </div>
+            </div>
+            <p class="add-on-price">+$2/mo</p>
+          </label>
+        </div>
         <button type="button" class="back-button" id="backBtn">Go Back</button>
         <button type="submit" class="next-button">Next Step</button>
       </form>
