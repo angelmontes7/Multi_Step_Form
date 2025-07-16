@@ -1,12 +1,15 @@
 .container {
+    font-family: 'Ubuntu', sans-serif;
     display: flex;
-    max-width: 1000px;
+    max-width: 850px;
+    max-height: 800px;
     margin: 2rem auto;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
+/* Side bar */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -14,12 +17,12 @@
     background-image: url(/assets/images/bg-sidebar-desktop.svg);
     background-size: cover;
     margin: 10px;
-    padding-right: 4rem;
+    padding-right: 5rem;
     padding-top: 3rem;
     padding-left: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    height: 500px;
+    height: 475px;
 }
 
 .step-container {
@@ -56,4 +59,54 @@
     color: white;
     margin: 0;
     font-size: 12px;
+}
+
+/* Form */
+.form-area{
+    padding-left: 3rem;
+    padding-top: 2rem;
+}
+
+.form-group{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+}
+
+.form-title{
+    font-size: 25px;
+    color: rgb(30, 5, 51);
+    margin-bottom: 10px;
+}
+
+.form-subtitle{
+    color: rgb(171, 146, 146);
+    margin: 0;
+    margin-bottom: 30px;
+}
+
+.input-title{
+    color: rgb(13, 13, 74);
+    margin-bottom: 5px;
+    font-size: 15px;
+    
+}
+
+.input-box{
+    border-color: black;
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 10px;
+    height: 20px;
+}
+
+.next-button{
+    color: white;
+    border-radius: 7px;
+    background-color: rgb(40, 11, 84);
+    height: 47px;
+    width: 115px;
+    margin-top: 70px;
+    margin-left: 325px;
+    font-size: 15px;
 }
