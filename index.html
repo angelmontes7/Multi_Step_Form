@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   <link rel="stylesheet" href="./index.css">
   <title>Frontend Mentor | Multi-step form</title>
@@ -47,12 +46,12 @@
       </div>
     </aside>
 
-    <!-- Form -->
-    <section class="form-area">
+    <!-- Form Step 1-->
+    <section id="step1" class="form-area">
       <h1 class="form-title">Personal info</h1>
       <p class="form-subtitle"> Please provide your name, email address, and phone number. </p>
       </div>
-        <form action="#" method="POST">
+        <form id="form1" action="#" method="POST">
           <div class="form-group">
             <label for="name" class="input-title">Name</label>
             <input type="text" id="name" name="name" placeholder="e.g. Vanessa Mint" class="input-box" required>
@@ -72,10 +71,38 @@
         </form>
       </div>
     </section>
+
+    <!-- Form Step 2-->
+    <section id="step2" class="form-area" style="display: none;">
+      <h1 class="form-title">Select your plan</h1>
+      <p class="form-subtitle"> You have the option of monthly or yearly billing. </p>
+
+      <div class="plans-container">
+        <div class="plan-card">
+          <img src="/assets/images/icon-arcade.svg" alt="arcade-icon" class="card-img">
+          <h1 class="card-title"> Arcade </h1>
+          <p class="card-price"> $9/mo</p>
+        </div>
+
+        <div class="plan-card">
+          <img src="/assets/images/icon-advanced.svg" alt="advanced-icon" class="card-img">
+          <h1 class="card-title"> Advanced </h1>
+          <p class="card-price"> $12/mo</p>
+        </div>
+
+        <div class="plan-card">
+          <img src="/assets/images/icon-pro.svg" alt="pro-icon" class="card-img">
+          <h1 class="card-title"> Pro </h1>
+          <p class="card-price"> $15/mo</p>
+        </div>
+      </div>
+    </section>
   </main>
   <footer class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Angel Montes</a>.
   </footer>
+
+  <script src="form.js"></script>
 </body>
 </html>
