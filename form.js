@@ -6,8 +6,8 @@ const nameInput = document.getElementById('name');
 const emailInput = document.getElementById('email');
 const phoneInput = document.getElementById('phone');
 
-const step1 = document.getElementById('step1');
-const step2 = document.getElementById('step2');
+const form_step1 = document.getElementById('form-step1');
+const form_step2 = document.getElementById('form-step2');
 
 const planCards = document.querySelectorAll('.plan-card');
 const selectedPlanInput = document.getElementById('selectedPlan');
@@ -24,8 +24,17 @@ const backBtn = document.getElementById('backBtn');
 billingFrequencyInput.value = 'Monthly';
 monthlyText.classList.add('active');
 yearlyText.classList.remove('active');
+updateSidebar(1)
 
 // ===== FUNCTIONS =====
+
+function updateSidebar(stepNumber) {
+    const stepNumbers = document.querySelectorAll('.step-number');
+    stepNumbers.forEach(num => num.classList.remove('active-step'));
+
+    const activeStep = document.getElementById(`sidebar-step${stepNumber}`);
+    if (activeStep) activeStep.classList.add('active-step');
+}
 
 // Step 1 Form Validation & Navigation
 function handleStep1Submit(event) {
@@ -40,8 +49,10 @@ function handleStep1Submit(event) {
     return;
   }
 
-  step1.style.display = 'none';
-  step2.style.display = 'block';
+  form_step1.style.display = 'none';
+  form_step2.style.display = 'block';
+  updateSidebar(2);
+
 }
 
 // Step 2 Plan Selection
@@ -74,8 +85,9 @@ function handleStep2Submit(event) {
 }
 
 function handleStep2Back(event) {
-    step1.style.display = 'block';
-    step2.style.display = 'none';
+    form_step1.style.display = 'block';
+    form_step2.style.display = 'none';
+    updateSidebar(1);
 }
 
 // ===== EVENT LISTENERS =====
