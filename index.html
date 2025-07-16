@@ -76,41 +76,45 @@
     <section id="step2" class="form-area" style="display: none;">
       <h1 class="form-title">Select your plan</h1>
       <p class="form-subtitle"> You have the option of monthly or yearly billing. </p>
-
-      <div class="plans-container">
-        <div class="plan-card">
-          <img src="/assets/images/icon-arcade.svg" alt="arcade-icon" class="card-img">
-          <h1 class="card-title"> Arcade </h1>
-          <p class="card-price"> $9/mo</p>
-        </div>
-
-        <div class="plan-card">
-          <img src="/assets/images/icon-advanced.svg" alt="advanced-icon" class="card-img">
-          <h1 class="card-title"> Advanced </h1>
-          <p class="card-price"> $12/mo</p>
-        </div>
-
-        <div class="plan-card">
-          <img src="/assets/images/icon-pro.svg" alt="pro-icon" class="card-img">
-          <h1 class="card-title"> Pro </h1>
-          <p class="card-price"> $15/mo</p>
-        </div>
-      </div>
       
-      <div class="billing-freq">
-        <div class="bill-title">
-          Monthly
-        </div>
-        <label class="switch">
-          <input type="checkbox">
-          <span class="slider round"></span>
-        </label>
-        <div class="bill-title">
-          Yearly
-        </div>
-      </div>
-      
+      <!-- Plan Cards -->
+      <form id="form2">
+        <div class="plans-container">
+          <div class="plan-card" sub-plan="Arcade">
+            <img src="/assets/images/icon-arcade.svg" alt="arcade-icon" class="card-img">
+            <h1 class="card-title"> Arcade </h1>
+            <p class="card-price"> $9/mo</p>
+          </div>
 
+          <div class="plan-card" sub-plan="Advanced">
+            <img src="/assets/images/icon-advanced.svg" alt="advanced-icon" class="card-img">
+            <h1 class="card-title"> Advanced </h1>
+            <p class="card-price"> $12/mo</p>
+          </div>
+
+          <div class="plan-card" sub-plan="Pro">
+            <img src="/assets/images/icon-pro.svg" alt="pro-icon" class="card-img">
+            <h1 class="card-title"> Pro </h1>
+            <p class="card-price"> $15/mo</p>
+          </div>
+        </div>
+        
+        <!-- Billing Toggle -->
+        <div class="billing-freq">
+          <div class="bill-title" id="monthly-text">Monthly</div>
+          <label class="switch">
+            <input type="checkbox" id="billing-toggle">
+            <span class="slider round"></span>
+          </label>
+          <div class="bill-title" id="yearly-text">Yearly</div>
+        </div>
+        
+        <input type="hidden" name="selectedPlan" id="selectedPlan" required>
+        <input type="hidden" name="billingFrequency" id="billingFrequency">
+
+        <button type="button" class="back-button" id="backBtn">Go Back</button>
+        <button type="submit" class="next-button">Next Step</button>
+      </form>
     </section>
   </main>
 

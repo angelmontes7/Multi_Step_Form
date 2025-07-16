@@ -1,16 +1,92 @@
-document.getElementById('form1').addEventListener('submit', function(event){
+// ===== SELECTORS =====
+const form1 = document.getElementById('form1');
+const form2 = document.getElementById('form2');
+
+const nameInput = document.getElementById('name');
+const emailInput = document.getElementById('email');
+const phoneInput = document.getElementById('phone');
+
+const step1 = document.getElementById('step1');
+const step2 = document.getElementById('step2');
+
+const planCards = document.querySelectorAll('.plan-card');
+const selectedPlanInput = document.getElementById('selectedPlan');
+
+const billingToggle = document.getElementById('billing-toggle');
+const billingFrequencyInput = document.getElementById('billingFrequency');
+
+const monthlyText = document.getElementById('monthly-text');
+const yearlyText = document.getElementById('yearly-text');
+
+const backBtn = document.getElementById('backBtn');
+
+// ===== INITIAL STATE =====
+billingFrequencyInput.value = 'Monthly';
+monthlyText.classList.add('active');
+yearlyText.classList.remove('active');
+
+// ===== FUNCTIONS =====
+
+// Step 1 Form Validation & Navigation
+function handleStep1Submit(event) {
+  event.preventDefault();
+
+  const name = nameInput.value.trim();
+  const email = emailInput.value.trim();
+  const phone = phoneInput.value.trim();
+
+  if (!name || !email || !phone) {
+    alert('Please fill out all fields.');
+    return;
+  }
+
+  step1.style.display = 'none';
+  step2.style.display = 'block';
+}
+
+// Step 2 Plan Selection
+function handlePlanSelection(card) {
+  planCards.forEach(c => c.classList.remove('selected'));
+  card.classList.add('selected');
+  selectedPlanInput.value = card.dataset.plan;
+}
+
+// Step 2 Billing Frequency Toggle
+function updateBillingFrequency() {
+  const isYearly = billingToggle.checked;
+  billingFrequencyInput.value = isYearly ? 'Yearly' : 'Monthly';
+
+  // Toggle text colors
+  monthlyText.classList.toggle('active', !isYearly);
+  yearlyText.classList.toggle('active', isYearly);
+}
+
+// Step 2 Final Submit
+function handleStep2Submit(event) {
+  if (!selectedPlanInput.value) {
+    alert('Please select a plan.');
     event.preventDefault();
+    return;
+  }
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const phone = document.getElementById('phone').value.trim();
+  console.log('Selected Plan:', selectedPlanInput.value);
+  console.log('Billing Frequency:', billingFrequencyInput.value);
+}
 
-    if (!name || !email || !phone) {
-        alert('Please fill out all fields.');
-        return;
-    }
+function handleStep2Back(event) {
+    step1.style.display = 'block';
+    step2.style.display = 'none';
+}
 
-    // Hide Step 1 and show Step 2
-    document.getElementById('step1').style.display = 'none';
-    document.getElementById('step2').style.display = 'block';
-})
+// ===== EVENT LISTENERS =====
+form1.addEventListener('submit', handleStep1Submit);
+
+planCards.forEach(card => {
+  card.addEventListener('click', () => handlePlanSelection(card));
+});
+
+billingToggle.addEventListener('change', updateBillingFrequency);
+
+form2.addEventListener('submit', handleStep2Submit);
+
+backBtn.addEventListener('click', handleStep2Back);

@@ -168,7 +168,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ccc;
+  background-color: #2196F3;
   -webkit-transition: .4s;
   transition: .4s;
 }
@@ -183,14 +183,6 @@
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;
-}
-
-input:checked + .slider {
-  background-color: #2196F3;
-}
-
-input:focus + .slider {
-  box-shadow: 0 0 1px #2196F3;
 }
 
 /* Moves the circle in the slide */
@@ -218,3 +210,28 @@ input:checked + .slider:before {
     justify-content: center;
 }
 
+.plan-card.selected {
+  border: 1px solid #4f46e5;
+  background-color: #f0f0ff;
+}
+
+.bill-title {
+  color: gray;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.bill-title.active {
+  color: #2196F3; /* blue */
+}
+
+.back-button{
+    color: white;
+    border-radius: 7px;
+    background-color: rgb(40, 11, 84);
+    height: 47px;
+    width: 115px;
+    margin-top: 70px;
+    font-size: 15px;
+}
