@@ -20,8 +20,6 @@ const billingFrequencyInput = document.getElementById('billingFrequency');
 const monthlyText = document.getElementById('monthly-text');
 const yearlyText = document.getElementById('yearly-text');
 
-const backBtn = document.getElementById('backBtn');
-
 // ===== INITIAL STATE =====
 billingFrequencyInput.value = 'Monthly';
 monthlyText.classList.add('active');
@@ -87,7 +85,7 @@ function updateBillingFrequency() {
 // Step 2 Final Submit
 function handleStep2Submit(event) {
   event.preventDefault();
-  
+
   if (!selectedPlanInput.value) {
     alert('Please select a plan.');
     return;
@@ -117,10 +115,10 @@ billingToggle.addEventListener('change', updateBillingFrequency);
 form2.addEventListener('submit', handleStep2Submit);
 
 // Back Button Logic
-backBtn.addEventListener('click', function() {
-    if (currentStep > 1) {
-        goToStep(currentStep - 1);
-    }
+document.querySelectorAll('.back-button').forEach(button => {
+    button.addEventListener('click', function() {
+        if (currentStep > 1) goToStep(currentStep - 1);
+    });
 });
 
 form3.addEventListener('submit', handleStep3Submit);
