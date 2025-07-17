@@ -1,8 +1,8 @@
 .container {
     font-family: 'Ubuntu', sans-serif;
     display: flex;
-    max-width: 950px;
-    max-height: 800px;
+    width: 950px;
+    height: 550px;
     margin: 2rem auto;
     background-color: white;
     border-radius: 10px;
@@ -23,6 +23,7 @@
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     height: 475px;
+    margin-right: 80px;
 }
 
 .step-container {
@@ -69,8 +70,14 @@
 
 /* Form Step 1 */
 .form-area{
-    padding-left: 3rem;
-    padding-top: 2rem;
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    width: 500px;
+    height: 425px;
 }
 
 .form-group{
@@ -103,7 +110,14 @@
     border-width: 1px;
     border-radius: 10px;
     padding: 10px;
-    height: 20px;
+    height: 30px;
+}
+
+.button-footer{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 40px;
 }
 
 .next-button{
@@ -112,8 +126,15 @@
     background-color: rgb(40, 11, 84);
     height: 47px;
     width: 115px;
-    margin-top: 70px;
-    margin-left: 325px;
+    font-size: 15px;
+}
+
+.back-button{
+    color: white;
+    border-radius: 7px;
+    background-color: rgb(40, 11, 84);
+    height: 47px;
+    width: 115px;
     font-size: 15px;
 }
 
@@ -205,6 +226,7 @@ input:checked + .slider:before {
 /* Billing frequency slider */
 .billing-freq{
     margin-top: 30px;
+    margin-bottom: 64px;
     gap: 20px;
     padding: 9px;
     display: flex;
@@ -229,16 +251,6 @@ input:checked + .slider:before {
   color: #2196F3; /* blue */
 }
 
-.back-button{
-    color: white;
-    border-radius: 7px;
-    background-color: rgb(40, 11, 84);
-    height: 47px;
-    width: 115px;
-    margin-top: 70px;
-    font-size: 15px;
-}
-
 
 /* Form Step 3 */
 .add-on-box{
@@ -246,8 +258,8 @@ input:checked + .slider:before {
     flex-direction: column;
     border: 1px solid;
     border-radius: 10px;
-    padding: 20px;
-    margin-top: 20px;
+    padding: 15px;
+    margin-top: 18px;
 }
 
 .inside-add-on {
@@ -255,6 +267,7 @@ input:checked + .slider:before {
     justify-content: space-between;
     align-items: center;
     width: 100%;
+    padding-right: 200px;
 }
 
 .left-add-on {
